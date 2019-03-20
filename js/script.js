@@ -66,7 +66,6 @@ function populateSpinner(spinner) {
   }
 }
 
-
 //create function to cycle through teams.
 
 
@@ -79,7 +78,27 @@ function expandTeam(team) {
   // container.append('<div class="teamDesc"' + team.message + "</div>");
   // document.write(container);
 
-  return document.getElementById('clunge').innerHTML = "<h2>" + team.name + "</h2>"
+  return document.getElementById('activeTeam').innerHTML =
+    "<img src='" + team.logo + "' alt='' id='activeTeamLogo'></img>" +
+    "<div class='carousel-caption'>" +
+      "<h3 class='h3-responsive'>" + team.name + "</h3>" +
+      "<p>" + team.message  + "</p></div>";
+};
+
+//Shows Minified version behind team.
+function slideTeam(team) {
+  return document.getElementById('activeTeam').innerHTML = "<h2>" + team.name + "</h2>"
     + "<h3>" + team.message + "</h3>"
     + "<img src='" + team.logo + "' alt=''></img>";
-};
+}
+
+
+//ACTION FUNCTIONS
+
+function spinCarousel() {
+
+}
+
+// $(document).ready(function() {
+//   jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 2000  // 2 seconds
+// });

@@ -133,6 +133,7 @@ header.masthead .bg-circle-4 {
   background-color: #ee0979 !important;
 }
 
+/*  BUTTONS */
 .btn-primary {
   background-color: #ee0979;
   border-color: #ee0979;
@@ -161,4 +162,44 @@ header.masthead .bg-circle-4 {
 .btn-secondary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+
+
+/*  CAROUSEL */
+
+.carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: 2s ease-in-out left;
+    -moz-transition: 2s ease-in-out left;
+    -o-transition: 2s ease-in-out left;
+    transition: 2s ease-in-out left;
+}
+
+.carousel-inner .carousel-item-left.active {
+  transform: translateX(-50%);
+}
+.carousel-inner .carousel-item-right.active {
+  transform: translateX(50%);
+}
+
+.carousel-inner .carousel-item-next {
+  transform: translateX(50%)
+}
+.carousel-inner .carousel-item-prev {
+  transform: translateX(-50%)
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{
+  transform: translateX(0);
+}X(0);
+
+
+.carousel-inner .activeTeamLogo {
+  outline-color: pink;
+  margin: 0, auto;
+  width: 50%;
+}
+
 }
