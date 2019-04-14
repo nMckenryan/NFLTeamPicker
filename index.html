@@ -2,35 +2,19 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="style/style.css">
-
-  <script src="js/bootstrap.js"></script>
- <script src="js/script.js"/></script>
-
-  <title>Hello, world!</title>
-</head>
-
-<body onload="expandTeam(broncos)">
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script> -->
-  <script src="js/bootstrap.min.js"></script>
-
-
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+    integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+  <link rel="stylesheet" type:"text/css" href="style/style.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+  <title>NFL Team Picker</title>
+</head>
 
+<body>
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
@@ -41,39 +25,11 @@
   </header>
 
   <section>
-    <!-- <div id="clunge">
-              <script type="text/javascript">
-                displayOneTeam(steelers)
-              </script>
-            </div> -->
-
-    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-
-      <!-- Wrapper for slides -->
       <div class="carousel-inner">
-
-        <div class="item">
-            <img src="img/bills.jpg">
-        </div>
-
-        <div class="item active" id="activeTeam">
-
-        </div>
-
-        <div class="item">
-            <img src="img/bears.jpg">
-        </div>
-
-
-      </div>
-      <!-- <script>$(document).ready(populateSpinner(spin))</script> -->
-      <!-- Left and right controls -->
-      <!-- <a class="right carousel-control" >
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a> -->
-
-      <button type="button" class="btn btn-primary btn-block" href="#myCarousel" data-slide="next">SPIN</button>
+        <!-- <div class="carousel-item col-md-4 active" id="0"> -->
+            <div id="logo"></div>
+        <!-- </div> -->
+      <button type="button" class="btn btn-primary btn-block" id="spinButton" href="#carouselExample">SPIN</button>
     </div>
 
   </section>
@@ -84,7 +40,73 @@
     </div>
   </footer>
 
-
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/script.js"/></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="http://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script> //initialises initial slides and spin function
+    $(document).ready(slideTeam(defaultTeam))
+
+    $('#spinButton').click(function() {
+      spinCarousel();
+    })
+  </script>
 </html>
+
+
+
+<!-- TEST HTML TO GO IN BODY -->
+
+<!-- <div id="logo">
+          <script type="text/javascript">
+            displayOneTeam(steelers)
+          </script>
+        </div>
+<div class="container-fluid">
+  <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000"
+  data-wrap="true">
+      <div class="carousel-inner row w-100 mx-auto" role="listbox">
+      <!-- Wrapper for slides
+      <div class="carousel-inner">
+        <div class="carousel-item col-md-4 active" id="0">
+            <img class="img-fluid" src="img/bills.jpg" alt="slide 1">
+        </div>
+        <div class="carousel-item col-md-4" id="1">
+            <img class="img-fluid mx-auto d-block" src="img/bears.jpg" alt="slide 2">
+        </div>
+        <div class="carousel-item col-md-4" id="2">
+            <img class="img-fluid mx-auto d-block" src="img/cowb.png" alt="slide 3">
+        </div>
+        <div class="carousel-item col-md-4" id="3">
+            <img class="img-fluid mx-auto d-block" src="img/chief.jpg" alt="slide 4">
+        </div>
+        <div class="carousel-item col-md-4" id="4">
+            <img class="img-fluid mx-auto d-block" src="img/colt.jpg" alt="slide 5">
+        </div>
+        <div class="carousel-item col-md-4" id="5">
+            <img class="img-fluid mx-auto d-block" src="img/falcons.jpg" alt="slide 6">
+        </div>
+        <div class="carousel-item col-md-4" id="6">
+            <img class="img-fluid mx-auto d-block" src="img/browns.jpg" alt="slide 7">
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+  <!-- <script>$(document).ready(populateSpinner(spin))</script> -->
+  <!-- Left and right controls -->
+  <!-- <a class="right carousel-control" >
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
